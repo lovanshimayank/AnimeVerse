@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import "./AdminOrders.css";
 function AdminOrders() {
@@ -10,18 +10,18 @@ function AdminOrders() {
     Authorization: `Bearer ${token}`,
   };
 
-  const loadOrders = async () => {
+  const loadOrders = useCallback(async () => {
     const res = await axios.get(
       "https://animeverse-gsox.onrender.com/api/orders/admin",
       { headers }
+      
     );
-
     setOrders(res.data);
-  };
+  },[token]);
 
   useEffect(() => {
     loadOrders();
-  }, []);
+  }, [loadOrders]);
 
   const updateStatus = async (
     id,

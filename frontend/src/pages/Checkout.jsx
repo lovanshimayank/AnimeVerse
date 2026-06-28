@@ -82,7 +82,7 @@ console.log("Amount from backend =", data.order.amount);
 console.log("Amount in rupees =", data.order.amount / 100);
 
 console.log("Order ID =", data.order.id);
-const order = data.order;
+
 
     const options = {
       key: "rzp_test_8CxHBNuMQt1Qn8",
