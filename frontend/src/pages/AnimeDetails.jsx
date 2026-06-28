@@ -4,13 +4,12 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { getAnimeById } from "../services/animeService";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { Navigation } from "swiper/modules";
-import animeStories from "../data/animeStories";
+
 import StorySlider from "../components/StorySlider";
 
 
