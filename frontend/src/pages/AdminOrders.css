@@ -1,0 +1,342 @@
+/* =================================
+      AnimeVerse Admin Orders
+================================= */
+
+
+.admin-orders-page{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:50px auto;
+
+    color:white;
+}
+
+
+/* Heading */
+
+.admin-orders-page h1{
+
+    text-align:center;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:40px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00ffff,
+        #8a2be2,
+        #ff416c
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 20px rgba(0,255,255,.4);
+}
+
+
+
+/* Order Card */
+
+.order-card{
+
+
+    background:
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:
+    blur(20px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    border-radius:25px;
+
+
+    padding:25px;
+
+
+    margin-bottom:30px;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.4);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.order-card:hover{
+
+
+    transform:
+
+    translateY(-8px);
+
+
+    border-color:#00ffff;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,255,255,.25);
+
+
+}
+
+
+
+
+/* User Name */
+
+.order-card h3{
+
+
+    font-size:24px;
+
+
+    color:#00ffff;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+/* Details */
+
+
+.order-card p{
+
+
+    font-size:18px;
+
+
+    color:#ddd;
+
+
+    margin:10px 0;
+
+
+}
+
+
+
+/* Status */
+
+.order-status{
+
+
+    display:inline-block;
+
+
+    padding:8px 18px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+    rgba(0,255,255,.15);
+
+
+    color:#00ffff;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+/* Buttons */
+
+
+.order-actions{
+
+
+    display:flex;
+
+
+    gap:15px;
+
+
+    margin-top:25px;
+
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.order-actions button{
+
+
+    padding:
+
+    12px 25px;
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-size:15px;
+
+
+    font-weight:700;
+
+
+    transition:.3s;
+
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+    );
+
+
+    box-shadow:
+
+    0 0 15px rgba(0,255,255,.3);
+
+}
+
+
+
+.order-actions button:hover{
+
+
+    transform:
+
+    translateY(-5px);
+
+
+    box-shadow:
+
+    0 0 30px cyan;
+
+
+}
+
+
+
+/* Different status colors */
+
+
+.order-actions button:nth-child(2){
+
+
+background:
+
+linear-gradient(
+135deg,
+#8a2be2,
+#ff416c
+);
+
+}
+
+
+
+.order-actions button:nth-child(3){
+
+
+background:
+
+linear-gradient(
+135deg,
+#00ff88,
+#00c853
+);
+
+}
+
+
+
+/* Empty Orders */
+
+
+.no-orders{
+
+
+text-align:center;
+
+
+font-size:25px;
+
+
+color:#aaa;
+
+
+margin-top:50px;
+
+
+}
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:700px){
+
+
+.admin-orders-page h1{
+
+font-size:2.2rem;
+
+}
+
+
+.order-card{
+
+padding:20px;
+
+}
+
+
+.order-actions button{
+
+width:100%;
+
+}
+
+
+}

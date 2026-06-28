@@ -1,0 +1,312 @@
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+
+width:94%;
+
+max-width:1450px;
+
+margin:18px auto;
+
+padding:18px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+position:sticky;
+
+top:15px;
+
+z-index:999;
+
+background:rgba(18,24,38,.72);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+box-shadow:
+
+0 12px 35px rgba(0,0,0,.45),
+
+0 0 30px rgba(124,58,237,.18);
+
+transition:.35s;
+
+}
+
+/* ===========================
+        LOGO
+=========================== */
+
+.logo{
+
+font-size:2rem;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+cursor:pointer;
+
+background:linear-gradient(
+90deg,
+#22D3EE,
+#7C3AED,
+#EC4899
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+transition:.35s;
+
+user-select:none;
+
+}
+
+.logo:hover{
+
+transform:scale(1.08);
+
+filter:drop-shadow(0 0 12px #7C3AED);
+
+}
+
+/* ===========================
+        LINKS
+=========================== */
+
+.nav-links{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+/* ===========================
+        ITEMS
+=========================== */
+
+.nav-links li{
+
+display:flex;
+
+align-items:center;
+
+}
+
+/* ===========================
+        LINK
+=========================== */
+
+.nav-links a{
+
+position:relative;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+padding:8px 2px;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#22D3EE;
+
+}
+
+/* ===========================
+      ANIMATED LINE
+=========================== */
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:3px;
+
+border-radius:50px;
+
+background:linear-gradient(
+90deg,
+#7C3AED,
+#EC4899
+);
+
+transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+/* ===========================
+        BADGES
+=========================== */
+
+.nav-links a{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+}
+
+/* ===========================
+        LOGOUT
+=========================== */
+
+.logout-btn{
+
+padding:10px 22px;
+
+border-radius:40px;
+
+background:linear-gradient(
+135deg,
+#7C3AED,
+#EC4899
+);
+
+color:white;
+
+font-weight:600;
+
+font-size:15px;
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 20px rgba(124,58,237,.25);
+
+}
+
+.logout-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 35px rgba(236,72,153,.45);
+
+}
+
+/* ===========================
+     NAV HOVER GLOW
+=========================== */
+
+.nav-links li:hover{
+
+filter:drop-shadow(
+0 0 8px rgba(34,211,238,.45)
+);
+
+}
+
+/* ===========================
+     RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.navbar{
+
+padding:16px 25px;
+
+}
+
+.nav-links{
+
+gap:18px;
+
+}
+
+.logo{
+
+font-size:1.7rem;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:18px;
+
+padding:20px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:1.5rem;
+
+}
+
+.nav-links a{
+
+font-size:14px;
+
+}
+
+.logout-btn{
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+}

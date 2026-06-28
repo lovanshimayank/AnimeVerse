@@ -1,0 +1,115 @@
+/* ===========================
+   HOME PAGE
+=========================== */
+
+.home-page{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#020617);
+    color:white;
+}
+
+.search-section{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.anime-section{
+    width:90%;
+    margin:60px auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-heading h1{
+
+font-size:3rem;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+background:linear-gradient(
+90deg,
+#00e5ff,
+#8b5cf6,
+#ff4d6d
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.section-heading p{
+
+font-size:18px;
+
+color:#d1d5db;
+
+max-width:750px;
+
+margin:auto;
+
+line-height:1.8;
+
+}
+
+.anime-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+.no-results{
+
+text-align:center;
+
+font-size:2rem;
+
+padding:80px;
+
+color:#ff4d6d;
+
+}
+
+@media(max-width:768px){
+
+.section-heading h1{
+
+font-size:2.2rem;
+
+}
+
+.section-heading p{
+
+font-size:15px;
+
+}
+
+.search-section{
+
+width:95%;
+
+}
+
+.anime-section{
+
+width:95%;
+
+}
+
+}

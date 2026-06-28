@@ -1,0 +1,47 @@
+.story-container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.story-slide {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  padding: 30px;
+
+  min-height: 450px;
+}
+
+.story-slide img {
+  width: 500px;
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+.story-content {
+  flex: 1;
+}
+
+.story-content h1 {
+  color: cyan;
+  font-size: 3rem;
+}
+
+.story-content h2 {
+  margin: 20px 0;
+}
+
+.story-content p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}

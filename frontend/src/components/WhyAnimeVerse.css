@@ -1,0 +1,67 @@
+.why{
+
+width:90%;
+
+margin:100px auto;
+
+text-align:center;
+
+}
+
+.why h2{
+
+margin-bottom:40px;
+
+color:white;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.why-card{
+
+background:#18181b;
+
+padding:35px;
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px #00ffff;
+
+}
+
+.why-card h1{
+
+font-size:55px;
+
+}
+
+.why-card h3{
+
+margin:15px 0;
+
+color:white;
+
+}
+
+.why-card p{
+
+color:#bbb;
+
+}

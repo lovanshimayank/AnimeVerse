@@ -1,0 +1,916 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #0f0c29,
+    #302b63,
+    #24243e
+  );
+
+  color: white;
+  font-family: sans-serif;
+}
+
+.hero {
+  height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 1.3rem;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 15px 35px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+.search-container {
+  text-align: center;
+  margin: 30px;
+}
+
+.search-container input {
+  width: 60%;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.genre-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.genre-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.anime-grid {
+  width: 90%;
+  margin: 50px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 30px;
+}
+
+.anime-card {
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.anime-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.anime-info {
+  padding: 15px;
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.anime-details {
+  width: 90%;
+  margin: 50px auto;
+
+  display: flex;
+  gap: 50px;
+
+  align-items: center;
+}
+
+.anime-poster {
+  width: 350px;
+
+  border-radius: 20px;
+}
+
+.anime-content {
+  flex: 1;
+}
+
+.anime-content h1 {
+  font-size: 3rem;
+}
+
+.anime-content h3 {
+  margin: 10px 0;
+  color: cyan;
+}
+
+.anime-content p {
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+.anime-content button {
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+
+
+.story-slide{
+  height:500px;
+
+  border-radius:20px;
+
+  overflow:hidden;
+}
+
+.story-slide img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.character-grid {
+  width: 99%;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+  gap: 20px;
+}
+
+.character-card {
+  text-align: center;
+  width: 90%;
+  height: 100%;
+
+  background: rgba(255,255,255,0.1);
+
+  padding: 15px;
+
+  border-radius: 20px;
+}
+
+.character-card img {
+  width: 90%;
+
+  height: 75%;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+
+.product-grid {
+  width: 90%;
+  margin: 50px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap: 30px;
+}
+
+.product-card {
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(15px);
+}
+
+.product-card img {
+  width: 100%;
+
+  height: 320px;
+
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-details {
+  width: 90%;
+
+  margin: 50px auto;
+
+  display: flex;
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+.product-details img {
+  width: 400px;
+
+  border-radius: 20px;
+}
+
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:30px;
+
+  margin:25px 0;
+  padding:25px;
+
+  border-radius:25px;
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(15px);
+
+  transition:.4s;
+}
+
+.cart-item:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 0 20px rgba(0,255,255,.3);
+}
+
+.cart-item img{
+  width:180px;
+  height:180px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+}
+
+.qty-btn{
+  padding:10px 15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  font-weight:bold;
+}
+
+.remove-btn{
+  background:#ff4d4d;
+
+  color:white;
+
+  border:none;
+
+  padding:10px 15px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+}
+
+.cart-total{
+  margin-top:40px;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  background:rgba(0,255,255,.08);
+} 
+
+
+
+
+
+
+
+/* ===============================
+   GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   ROOT COLORS
+==================================*/
+
+:root{
+
+--bg:#080B14;
+--card:#121826;
+--card2:#1B2335;
+
+--primary:#7C3AED;
+--secondary:#EC4899;
+
+--cyan:#22D3EE;
+--green:#22C55E;
+--orange:#F97316;
+--yellow:#FACC15;
+--red:#EF4444;
+
+--text:#FFFFFF;
+--text2:#CBD5E1;
+
+--border:rgba(255,255,255,.08);
+
+--shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+/* ===============================
+   RESET
+==================================*/
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+
+radial-gradient(circle at top right,#7C3AED22,transparent 35%),
+
+radial-gradient(circle at bottom left,#EC489922,transparent 35%),
+
+var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* ===============================
+   SCROLLBAR
+==================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#090C16;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+
+180deg,
+
+#7C3AED,
+
+#EC4899
+
+);
+
+border-radius:30px;
+
+}
+
+/* ===============================
+   LINKS
+==================================*/
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* ===============================
+   IMAGES
+==================================*/
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+/* ===============================
+   BUTTON
+==================================*/
+
+button{
+
+cursor:pointer;
+
+border:none;
+
+outline:none;
+
+transition:.35s;
+
+font-weight:600;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+/* ===============================
+   INPUT
+==================================*/
+
+input,
+
+textarea,
+
+select{
+
+width:100%;
+
+padding:14px 18px;
+
+margin-top:10px;
+
+margin-bottom:18px;
+
+border-radius:12px;
+
+border:1px solid var(--border);
+
+background:#151D2D;
+
+color:white;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+input:focus,
+
+textarea:focus,
+
+select:focus{
+
+border:1px solid var(--primary);
+
+box-shadow:0 0 20px #7C3AED44;
+
+outline:none;
+
+}
+
+/* ===============================
+   CONTAINER
+==================================*/
+
+.container{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+/* ===============================
+   SECTION
+==================================*/
+
+section{
+
+padding:80px 0;
+
+}
+
+/* ===============================
+   HEADINGS
+==================================*/
+
+h1{
+
+font-size:48px;
+
+font-weight:700;
+
+}
+
+h2{
+
+font-size:34px;
+
+}
+
+h3{
+
+font-size:24px;
+
+}
+
+p{
+
+color:var(--text2);
+
+line-height:1.7;
+
+}
+
+/* ===============================
+   GLASS CARD
+==================================*/
+
+.glass{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+box-shadow:var(--shadow);
+
+}
+
+/* ===============================
+   PRIMARY BUTTON
+==================================*/
+
+.primary-btn{
+
+padding:14px 34px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#7C3AED,
+
+#EC4899
+
+);
+
+border-radius:50px;
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+box-shadow:
+
+0 10px 30px
+
+rgba(124,58,237,.35);
+
+}
+
+.primary-btn:hover{
+
+box-shadow:
+
+0 18px 40px
+
+rgba(236,72,153,.45);
+
+}
+
+/* ===============================
+   SECONDARY BUTTON
+==================================*/
+
+.secondary-btn{
+
+padding:14px 34px;
+
+border-radius:50px;
+
+background:transparent;
+
+border:2px solid #7C3AED;
+
+color:white;
+
+}
+
+.secondary-btn:hover{
+
+background:#7C3AED;
+
+}
+
+/* ===============================
+   PRODUCT CARD
+==================================*/
+
+.product-card{
+
+background:var(--card);
+
+border-radius:22px;
+
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:var(--shadow);
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.product-card:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.02);
+
+border-color:#7C3AED;
+
+}
+
+.product-card img{
+
+height:300px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.product-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ===============================
+   ANIME GLOW COLORS
+==================================*/
+
+.db{
+
+box-shadow:
+
+0 0 25px
+
+#F59E0B55;
+
+}
+
+.naruto{
+
+box-shadow:
+
+0 0 25px
+
+#F9731655;
+
+}
+
+.onepiece{
+
+box-shadow:
+
+0 0 25px
+
+#EF444455;
+
+}
+
+.jjk{
+
+box-shadow:
+
+0 0 25px
+
+#7C3AED66;
+
+}
+
+.ds{
+
+box-shadow:
+
+0 0 25px
+
+#22C55E55;
+
+}
+
+.sololeveling{
+
+box-shadow:
+
+0 0 25px
+
+#3B82F655;
+
+}
+
+.bleach{
+
+box-shadow:
+
+0 0 25px
+
+#E5E7EB55;
+
+}
+
+.aot{
+
+box-shadow:
+
+0 0 25px
+
+#92400E66;
+
+}
+
+.csm{
+
+box-shadow:
+
+0 0 25px
+
+#DC262655;
+
+}
+
+/* ===============================
+   FADE
+==================================*/
+
+.fade{
+
+animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===============================
+   RESPONSIVE
+==================================*/
+
+@media(max-width:992px){
+
+h1{
+
+font-size:38px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+width:95%;
+
+}
+
+section{
+
+padding:60px 0;
+
+}
+
+h1{
+
+font-size:32px;
+
+}
+
+h2{
+
+font-size:25px;
+
+}
+
+}

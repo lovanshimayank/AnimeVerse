@@ -1,0 +1,170 @@
+.wishlist-page{
+    width:92%;
+    max-width:1400px;
+    margin:40px auto;
+    color:white;
+}
+
+.wishlist-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:40px;
+    color:#ff4da6;
+
+    text-shadow:0 0 15px #ff4da6;
+}
+
+.empty-wishlist{
+    text-align:center;
+    margin-top:100px;
+}
+
+.empty-wishlist h2{
+    margin-bottom:20px;
+}
+
+.store-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#ff4da6,#00e5ff);
+
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    transition:.35s;
+}
+
+.store-btn:hover{
+    transform:scale(1.05);
+}
+
+.wishlist-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+    gap:30px;
+}
+
+.wishlist-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.wishlist-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(255,77,166,.5);
+}
+
+.wishlist-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+}
+
+.wishlist-info{
+
+    padding:20px;
+}
+
+.wishlist-info h2{
+
+    margin-bottom:10px;
+}
+
+.price{
+
+    color:#00e5ff;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+}
+
+.desc{
+
+    color:#ddd;
+
+    line-height:1.5;
+}
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.cart-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#00e5ff;
+
+    color:black;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.cart-btn:hover{
+
+    transform:scale(1.05);
+}
+
+.remove-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:crimson;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.remove-btn:hover{
+
+    background:red;
+}
