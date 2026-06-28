@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState} from "react";
 import axios from "axios";
 import "./AdminOrders.css";
 function AdminOrders() {
@@ -10,23 +10,26 @@ function AdminOrders() {
     Authorization: `Bearer ${token}`,
   };
 
-  const loadOrders = useCallback(async () => {
+  
+
+ useEffect(() => {
+  const loadOrders = async () => {
     const res = await axios.get(
       "https://animeverse-gsox.onrender.com/api/orders/admin",
-      { headers }
-      
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
+
     setOrders(res.data);
-  },[token]);
+  };
 
-  useEffect(() => {
-    loadOrders();
-  }, [loadOrders]);
+  loadOrders();
+}, [token]);
 
-  const updateStatus = async (
-    id,
-    status
-  ) => {
+  const updateStatus = async (id,status) => {
     await axios.put(
       `https://animeverse-gsox.onrender.com/api/orders/${id}`,
       {
@@ -35,7 +38,7 @@ function AdminOrders() {
       { headers }
     );
 
-    loadOrders();
+    window.location.reload();
   };
 
   return (
