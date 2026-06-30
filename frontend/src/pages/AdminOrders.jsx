@@ -29,17 +29,26 @@ function AdminOrders() {
   loadOrders();
 }, [token]);
 
-  const updateStatus = async (id,status) => {
-    await axios.put(
-      `https://animeverse-gsox.onrender.com/api/orders/${id}`,
-      {
-        status,
-      },
+ const updateStatus = async (id, status) => {
+  console.log("BUTTON CLICKED");
+
+  try {
+    const res = await axios.put(
+      `http://localhost:8000/api/orders/${id}`,
+      { status },
       { headers }
     );
 
-    window.location.reload();
-  };
+    console.log("SERVER RESPONSE:", res.data);
+
+    loadOrders();
+
+  } catch (err) {
+    console.log("AXIOS ERROR");
+    console.log(err.response);
+    console.log(err.response?.data);
+  }
+};
 
   return (
 

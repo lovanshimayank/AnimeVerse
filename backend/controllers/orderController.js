@@ -112,23 +112,46 @@ res.status(500).json({
 
 // UPDATE ORDER STATUS
 
+
+
 exports.updateOrderStatus = async (req, res) => {
   try {
-    const order = await Order.findById(req.params.id);
+
+    const order = await Order.findById(req.params.id)
+    .populate(
+      "user",
+      "name email"
+    );  
+
+    if (!order) {
+      return res.status(404).json({
+        message: "Order not found",
+      });
+    }
 
     order.orderStatus = req.body.status;
 
     await order.save();
 
+    // SEND EMAIL
+    const sendOrderEmail = require("../utils/sendEmail");
+
+    await sendOrderEmail(
+      order.user.email,
+      order.user.name,
+      order.orderStatus,
+      order._id
+    );
+
     res.status(200).json(order);
-  } catch(error){
 
-console.log("ORDER ERROR:", error);
+  } catch (error) {
 
-res.status(500).json({
-    message:error.message,
-    stack:error.stack
-});
+    console.log(error);
 
-}
+    res.status(500).json({
+      message: error.message,
+    });
+
+  }
 };

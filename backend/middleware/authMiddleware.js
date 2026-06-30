@@ -16,6 +16,7 @@ module.exports = (req, res, next) => {
     );
 
     console.log("DECODED:", decoded);
+    console.log("USER ROLE:", decoded.role);
 
     req.user = decoded;
 

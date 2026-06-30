@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { useDispatch } from "react-redux";
 
-import { setUser,setLoading } from "./redux/slices/authSlice";
+import { setUser, setLoading } from "./redux/slices/authSlice";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -24,157 +24,114 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminProducts from "./pages/AdminProducts";
 import AdminOrders from "./pages/AdminOrders";
 
-
+import AddAnime from "./pages/AddAnime";
 
 function App() {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const loadUser = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          const res = await axios.get(
+            "https://animeverse-gsox.onrender.com/api/auth/profile",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
 
-  useEffect(()=>{
+          dispatch(setUser(res.data));
+          const cartRes = await axios.get(
+            "https://animeverse-gsox.onrender.com/api/cart",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
 
+          dispatch(setCart(cartRes.data?.items || []));
+        } catch (error) {
+          console.log(error);
 
-  const loadUser = async()=>{
-  const token = localStorage.getItem("token");
-  if(token){
-    try{
-      const res = await axios.get(
-        "https://animeverse-gsox.onrender.com/api/auth/profile", {
-            headers:{
-              Authorization:`Bearer ${token}`
-            }
-  }
-
-);
-
-
-dispatch(setUser(res.data));
-const cartRes = await axios.get(
-    "https://animeverse-gsox.onrender.com/api/cart",
-    {
-        headers: {
-            Authorization: `Bearer ${token}`
+          localStorage.removeItem("token");
         }
-    }
-);
+      }
 
-dispatch(setCart(cartRes.data?.items || []));
+      dispatch(setLoading(false));
+    };
 
-
-}
-
-catch(error){
-
-console.log(error);
-
-localStorage.removeItem("token");
-
-}
-
-
-}
-
-
-dispatch(setLoading(false));
-
-
-};
-
-
-loadUser();
-
-
-},[dispatch]);
-
-
-
+    loadUser();
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Routes>
-
         <Route path="/" element={<Home />} />
 
         <Route path="/anime/:id" element={<AnimeDetails />} />
 
-<Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
-<Route
-  path="/register"
-  element={<Register />}
-/>
+        <Route path="/register" element={<Register />} />
         <Route path="/store" element={<Store />} />
 
-       
-        <Route path="/product/:id" element={<Product />}/>
+        <Route path="/product/:id" element={<Product />} />
+
+        <Route path="/orders" element={<Orders />} />
+
+        <Route path="/admin/add-anime" element={<AddAnime />} />
 
         <Route
-path="/orders"
-element={<Orders/>}
-/>
-
-        <Route path="/cart" element={
-          <ProtectedRoute>
-            <Cart/>
-          </ProtectedRoute>} 
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
         />
 
-        <Route
-          path="/wishlist"
-          element={<Wishlist />}
-        />
+        <Route path="/wishlist" element={<Wishlist />} />
 
         <Route
           path="/checkout"
           element={
-          <ProtectedRoute>
-            <Checkout/>
-          </ProtectedRoute>}
-        />
-
-        <Route
-
-          path="/profile"
-          element={
             <ProtectedRoute>
-              <Profile/>
+              <Checkout />
             </ProtectedRoute>
           }
         />
 
         <Route
- path="/orders"
- element={
-   <ProtectedRoute>
-      <Orders/>
-   </ProtectedRoute>
- }
-/>
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
 
-      <Route
-  path="/admin"
-  element={<AdminDashboard />}
-/>
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/admin/products"
-  element={<AdminProducts />}
-/>
+        <Route path="/admin" element={<AdminDashboard />} />
 
-<Route
-  path="/admin/orders"
-  element={<AdminOrders />}
-/>
+        <Route path="/admin/products" element={<AdminProducts />} />
 
-<Route
-path="/admin"
-element={<AdminDashboard/>}
-/>
+        <Route path="/admin/orders" element={<AdminOrders />} />
 
-<Route
-path="/admin/products"
-element={<AdminProducts/>}
-/>
+        <Route path="/admin" element={<AdminDashboard />} />
 
+        <Route path="/admin/products" element={<AdminProducts />} />
       </Routes>
     </BrowserRouter>
   );

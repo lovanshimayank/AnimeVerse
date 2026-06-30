@@ -2,28 +2,72 @@ const mongoose = require("mongoose");
 
 const animeSchema = new mongoose.Schema(
   {
-    title: String,
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-    description: String,
+    description: {
+      type: String,
+      required: true,
+    },
 
-    genre: String,
+    genre: {
+      type: String,
+      required: true,
+    },
 
-    poster: String,
+    poster: {
+      type: String,
+      required: true,
+    },
 
-    trailer: String,
+    trailer: {
+      type: String,
+      default: "",
+    },
 
-    storySlides: [String],
+
+    summarySlides: {
+      type: [String],
+      default: [],
+    },
+
 
     characters: [
       {
-        name: String,
-        image: String,
+        name: {
+          type: String,
+          default: "",
+        },
+
+        image: {
+          type: String,
+          default: "",
+        },
       },
     ],
   },
+
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Anime", animeSchema);
+
+// Remove old field if accidentally created
+animeSchema.set("toJSON", {
+  transform: function (doc, ret) {
+
+    delete ret.storySlides;
+
+    return ret;
+  },
+});
+
+
+module.exports = mongoose.model(
+  "Anime",
+  animeSchema
+);

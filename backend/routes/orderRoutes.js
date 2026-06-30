@@ -40,4 +40,15 @@ router.put(
   updateOrderStatus
 );
 
+router.put(
+  "/:id",
+  (req, res, next) => {
+    console.log("UPDATE ORDER ROUTE HIT");
+    next();
+  },
+  authMiddleware,
+  adminMiddleware,
+  updateOrderStatus
+);
+
 module.exports = router;

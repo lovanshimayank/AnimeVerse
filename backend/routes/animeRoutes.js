@@ -1,5 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const authMiddleware = require("../middleware/authMiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
+
+const {
+    addAnime,
+} = require("../controllers/adminAnimeController");
 
 const {
   createAnime,
@@ -10,8 +16,8 @@ const {
   getAnimeByGenre,
 } = require("../controllers/animeController");
 
-const authMiddleware = require("../middleware/authMiddleware");
-const adminMiddleware = require("../middleware/adminMiddleware");
+
+
 
 /*
 PUBLIC ROUTES
@@ -46,6 +52,13 @@ router.delete(
   authMiddleware,
   adminMiddleware,
   deleteAnime
+);
+
+router.post(
+    "/admin/add",
+    authMiddleware,
+    adminMiddleware,
+    addAnime
 );
 
 module.exports = router;

@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./AdminDashboard.css";
+import { useNavigate } from "react-router-dom";
 
 function AdminDashboard() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -11,7 +13,6 @@ function AdminDashboard() {
         <h1>AnimeVerse Admin Panel</h1>
 
         <div className="admin-links">
-
           <Link to="/admin/orders">
             <button>Manage Orders</button>
           </Link>
@@ -20,6 +21,9 @@ function AdminDashboard() {
             <button>Manage Products</button>
           </Link>
 
+          <Link to="/admin/add-anime">
+            <button> Add Anime</button>
+          </Link>
         </div>
       </div>
     </>
