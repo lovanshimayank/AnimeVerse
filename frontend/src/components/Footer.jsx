@@ -28,7 +28,7 @@ Watch • Explore • Collect
 
 <p>
 
-Made with using MERN Stack
+© 2026 AnimeVerse. Developed by Mayank Lovanshi. All Rights Reserved.
 
 </p>
 
