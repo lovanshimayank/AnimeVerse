@@ -34,7 +34,7 @@ function AdminOrders() {
 
   try {
     const res = await axios.put(
-      `http://localhost:8000/api/orders/${id}`,
+      `http://animeverse-gsox.onrender.com/api/orders/${id}`,
       { status },
       { headers }
     );
