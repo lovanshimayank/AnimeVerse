@@ -7,15 +7,15 @@ function AdminOrders() {
 
   const token = localStorage.getItem("token");
 
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
-
   const loadOrders = useCallback(async () => {
     try {
       const res = await axios.get(
         "https://animeverse-gsox.onrender.com/api/orders/admin",
-        { headers }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       setOrders(res.data);
@@ -33,10 +33,14 @@ function AdminOrders() {
       await axios.put(
         `https://animeverse-gsox.onrender.com/api/orders/${id}`,
         { status },
-        { headers }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
-      loadOrders();
+      await loadOrders();
     } catch (err) {
       console.log(err);
     }
@@ -61,19 +65,25 @@ function AdminOrders() {
 
             <div className="order-actions">
               <button
-                onClick={() => updateStatus(order._id, "Processing")}
+                onClick={() =>
+                  updateStatus(order._id, "Processing")
+                }
               >
                 ⚙ Processing
               </button>
 
               <button
-                onClick={() => updateStatus(order._id, "Shipped")}
+                onClick={() =>
+                  updateStatus(order._id, "Shipped")
+                }
               >
                 🚚 Shipped
               </button>
 
               <button
-                onClick={() => updateStatus(order._id, "Delivered")}
+                onClick={() =>
+                  updateStatus(order._id, "Delivered")
+                }
               >
                 ✅ Delivered
               </button>
